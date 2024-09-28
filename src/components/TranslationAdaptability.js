@@ -62,7 +62,7 @@ const TranslationAdaptability = () => {
   return (
     <Wrapper>
       <TitleWrapper>
-        <img src="logo.png" alt="BridgeTalk Logo" style={{ height: '50px' }} /> {/* Adjust the path */}
+        <img src="toplefticon.png" alt="BridgeTalk Logo" style={{ height: '50px' }} /> {/* Adjust the path */}
         <Title>BridgeTalk</Title>
       </TitleWrapper>
       <IconGrid>
@@ -71,15 +71,15 @@ const TranslationAdaptability = () => {
           <IconLabel>Global Translator</IconLabel>
         </IconCard>
         <IconCard>
-          <IconImage src={"meeting-mentor.png"} alt="Tone Advisor" />
+          <IconImage src={"2brains.png"} alt="Tone Advisor" />
           <IconLabel>Tone Advisor</IconLabel>
         </IconCard>
         <IconCard>
-          <IconImage src={"fast-track-learning.png"} alt="Meeting Mentor" />
+          <IconImage src={"bot.png"} alt="Meeting Mentor" />
           <IconLabel>Meeting Mentor</IconLabel>
         </IconCard>
         <IconCard>
-          <IconImage src={"fast-track-learning.png"} alt="FastTrack Learning" />
+          <IconImage src={"computer.png"} alt="FastTrack Learning" />
           <IconLabel>FastTrack Learning</IconLabel>
         </IconCard>
       </IconGrid>
