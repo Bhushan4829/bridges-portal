@@ -72,9 +72,10 @@ Implement endpoints for real-time translation, community interactions, and menta
 ## Contact
 For any inquiries or feedback, please reach out to us at:
 
-Email: sarveshb@buffalo.edu
-Email: gwalke@buffalo.edu
-Email: bhushanm@buffalo.edu
+Email: sarveshb@buffalo.edu   
+Email: gwalke@buffalo.edu   
+Email: bhushanm@buffalo.edu   
+Email: sjain35@buffalo.edu   
 
 
 
