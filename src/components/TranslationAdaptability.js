@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom'; // Import the useNavigate hook from react-router-dom
 
 // Container to center the page content vertically and horizontally
 const OuterContainer = styled.div`
@@ -49,7 +50,6 @@ const IconGrid = styled.div`
   max-width: 500px; 
 `;
 
-// Adjusted IconCard to include background color variations
 const IconCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -57,14 +57,14 @@ const IconCard = styled.div`
   justify-content: center;
   padding: 1rem;
   text-align: center;
-  border-radius: 15px; // Rounded corners
-  background-color: ${(props) => props.bgColor || '#e8f4ff'}; // Use props to assign background color
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); // Subtle shadow effect
-  transition: transform 0.2s; // Slight animation on hover
+  border-radius: 15px; 
+  background-color: ${(props) => props.bgColor || '#e8f4ff'};
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
   cursor: pointer;
 
   &:hover {
-    transform: scale(1.05); // Slight zoom effect on hover
+    transform: scale(1.05); 
   }
 `;
 
@@ -79,17 +79,28 @@ const IconLabel = styled.p`
   font-weight: bold;
 `;
 
+const TopLeftIcon = styled.img`
+  height: 50px;
+  cursor: pointer; // Change the cursor to indicate it's clickable
+`;
+
 // Main component
 const TranslationAdaptability = () => {
+  const navigate = useNavigate(); // Hook for navigation
+
   return (
     <OuterContainer>
       <PageContainer>
         <TitleWrapper>
-          <img src="toplefticon.png" alt="BridgeTalk Logo" style={{ height: '50px' }} />
+          {/* Make the icon clickable */}
+          <TopLeftIcon
+            src="toplefticon.png"
+            alt="BridgeTalk Logo"
+            onClick={() => navigate('/home')} // Navigate to homepage on click
+          />
           <Title>BridgesTalk</Title>
         </TitleWrapper>
         <IconGrid>
-          {/* Applying unique background colors to each IconCard */}
           <IconCard bgColor="#ffe6e6"> {/* Light red */}
             <IconImage src={"globaltranslate.png"} alt="Global Translator" />
             <IconLabel>Global Translator</IconLabel>

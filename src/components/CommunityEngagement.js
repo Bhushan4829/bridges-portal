@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 // Container to center the page content vertically and horizontally
 const OuterContainer = styled.div`
@@ -26,10 +27,26 @@ const PageContainer = styled.div`
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 `;
 
+// Wrapper for the header section including the button and title
+const HeaderWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+`;
+
 const Title = styled.h1`
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
+`;
+
+// Button to navigate to the homepage
+const HomeButton = styled.img`
+  height: 50px;
+  cursor: pointer;
+  margin-right: 20px; // Add some spacing between button and title
 `;
 
 // Updated IconWrapper with background colors and styles similar to BridgesBuddy prompts
@@ -37,17 +54,17 @@ const IconWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 15px 0; // Reduced vertical margin to fit all content
-  background-color: ${(props) => props.bgColor || '#e8f4ff'}; // Dynamic background colors for each tile
-  border-radius: 20px; // Rounded corners for tiles
-  padding: 15px; // Add padding to create a boxed effect
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for the rectangle
+  margin: 15px 0;
+  background-color: ${(props) => props.bgColor || '#e8f4ff'}; 
+  border-radius: 20px; 
+  padding: 15px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const IconImage = styled.img`
-  width: 100px; // Set the width of the icon images
+  width: 100px; 
   height: auto;
-  margin-bottom: 10px; // Space between the image and the label
+  margin-bottom: 10px;
 `;
 
 const IconLabel = styled.h2`
@@ -58,10 +75,20 @@ const IconLabel = styled.h2`
 
 // Community Engagement component
 const CommunityEngagement = () => {
+  const navigate = useNavigate(); // Hook to handle navigation
+
   return (
     <OuterContainer>
       <PageContainer>
-        <Title>CommuniBridges</Title>
+        <HeaderWrapper>
+          {/* Navigation Button to go to Homepage */}
+          <HomeButton
+            src="toplefticon.png"
+            alt="Home"
+            onClick={() => navigate('/home')} // Navigate to homepage on click
+          />
+          <Title>CommuniBridges</Title>
+        </HeaderWrapper>
 
         {/* Icon Cards with Different Background Colors */}
         <IconWrapper bgColor="#ffe6e6"> {/* Light Red Background */}

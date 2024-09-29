@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 
 // Define styled components with improved structure and styling
 const OuterContainer = styled.div`
@@ -20,13 +21,29 @@ const PageContainer = styled.div`
   padding: 10px; 
 `;
 
+// Wrapper for the header section including the button and title
+const HeaderWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  position: relative; // Allows us to absolutely position the HomeButton
+  width: 100%;
+  margin-bottom: 10px;
+`;
+
+// Styled component for the Home Button aligned to the left
+const HomeButton = styled.img`
+  height: 50px;
+  cursor: pointer;
+  position: absolute; // Absolute positioning to keep it on the left
+  left: 0; // Align the button to the left edge of the container
+`;
+
 const Title = styled.h1`
   font-size: 28px; 
   font-weight: bold;
   text-align: center;
-  margin-bottom: 10px; 
+  margin: 0 auto; // Center the title horizontally
   color: #333;
-  padding: 10px;
 `;
 
 const ImageWrapper = styled.div`
@@ -85,11 +102,22 @@ const QuoteText = styled.p`
 
 const BridgesBuddy = () => {
   const [mode, setMode] = useState('translational');
+  const navigate = useNavigate(); // Initialize useNavigate
 
   return (
     <OuterContainer>
       <PageContainer>
-        <Title>BridgesBuddy</Title>
+        {/* Header Section with Home Button and Centered Title */}
+        <HeaderWrapper>
+          {/* Home Button aligned to the left side */}
+          <HomeButton
+            src="toplefticon.png" // Path to your home button image
+            alt="Home"
+            onClick={() => navigate('/home')} // Navigate to the homepage on click
+          />
+          {/* Centered Title */}
+          <Title>BridgesBuddy</Title>
+        </HeaderWrapper>
 
         <ImageWrapper>
           <BuddyImage src="botgif.gif" alt="Bridges Buddy" /> 
