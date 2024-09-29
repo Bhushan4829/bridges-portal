@@ -128,7 +128,7 @@ const HomePage = () => {
           </Feature>
           <Feature>
             <FeatureImage src="stigma_free.png" alt="Stigma-Free Education" />
-            <FeatureTitle>Stigma-Free Education</FeatureTitle>
+            <FeatureTitle>Stigma Free Education</FeatureTitle>
           </Feature>
         </MainSection>
 
