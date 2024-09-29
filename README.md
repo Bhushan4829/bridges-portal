@@ -9,6 +9,14 @@
 
 ---
 
+## Demo Link
+1. Frontend application - [link](https://bridges-portal.netlify.app/)
+2. Speech translation communication video - [demo](https://drive.google.com/file/d/1tSXipLlxly22HAVoAV5O2-tk1qUw702Z/view?usp=sharing)
+3. Speech translation communication code - [link](https://docs.google.com/document/d/1EPHQNrDBBh1fpNQHPPRdGrXHiWC_d36lmAI5fFaIn4c/edit?usp=sharing)
+
+
+---
+
 ## Key Features
 ### 1. **AI Avatar - "Bridges Buddy"**
 Bridges Buddy is an empathetic AI guide, offering tailored support for cultural integration:
