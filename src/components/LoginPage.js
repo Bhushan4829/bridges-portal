@@ -2,24 +2,36 @@ import React from "react";
 import styled from "styled-components";
 import { useNavigate } from 'react-router-dom';
 
+// Container to center the page content vertically and horizontally
+const OuterContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f9;
+  padding: 20px;
+`;
+
 // Reusable PageContainer for all screens
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  width: 100%; // Full width to mimic a mobile view
-  max-width: 400px; // Set a max width for larger screens
+  width: 100%;
+  max-width: 500px; /* Increased max-width for a better fit */
   margin: auto;
-  height: 100vh;
   box-sizing: border-box;
-  background-color: #fff; // White background
+  background-color: #fff;
   border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); // Subtle shadow for the container
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 `;
 
 const ImageContainer = styled.div`
-  width: 150px;
+  display: flex;
+  justify-content: center; /* Horizontally center the image */
+  align-items: center;     /* Vertically center the image */
+  width: 100%;
   margin-bottom: 20px;
 `;
 
@@ -90,29 +102,31 @@ const LoginPage = () => {
   };
 
   return (
-    <PageContainer>
-      <ImageContainer>
-        <img
-          src="Logo.png"
-          alt="Welcome"
-          style={{ width: "130%", height: "100%", borderRadius: "50%" }}
-        />
-      </ImageContainer>
-      <h2 style={{ marginBottom: "20px" }}>Login</h2>
-      <Input type="email" placeholder="Email" />
-      <Input type="password" placeholder="Password" />
-      <Button type="submit" onClick={handleGuestLogin}>Sign In</Button>
-      <p style={{ margin: "15px 0" }}>Or continue with</p>
-      <SocialMediaButtons>
-        <FacebookButton onClick={handleGuestLogin}>
-          <img src={"fb_logo.jpeg"} alt="Facebook" /> Facebook
-        </FacebookButton>
-        <GoogleButton onClick={handleGuestLogin}>
-          <img src={"google_logo.jpeg"}  alt="Google" /> Google
-        </GoogleButton>
-      </SocialMediaButtons>
-      <GuestButton onClick={handleGuestLogin}>Continue as Guest</GuestButton>
-    </PageContainer>
+    <OuterContainer>
+      <PageContainer>
+        <ImageContainer>
+          <img
+            src="Logo.png"
+            alt="Welcome"
+            style={{ width: "80%", height: "80%", borderRadius: "50%" }} // Centered and consistent size
+          />
+        </ImageContainer>
+        <h2 style={{ marginBottom: "20px" }}>Login</h2>
+        <Input type="email" placeholder="Email" />
+        <Input type="password" placeholder="Password" />
+        <Button type="submit" onClick={handleGuestLogin}>Sign In</Button>
+        <p style={{ margin: "15px 0" }}>Or continue with</p>
+        <SocialMediaButtons>
+          <FacebookButton onClick={handleGuestLogin}>
+            <img src={"fb_logo.jpeg"} alt="Facebook" /> Facebook
+          </FacebookButton>
+          <GoogleButton onClick={handleGuestLogin}>
+            <img src={"google_logo.jpeg"} alt="Google" /> Google
+          </GoogleButton>
+        </SocialMediaButtons>
+        <GuestButton onClick={handleGuestLogin}>Continue as Guest</GuestButton>
+      </PageContainer>
+    </OuterContainer>
   );
 };
 
