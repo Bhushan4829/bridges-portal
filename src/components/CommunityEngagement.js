@@ -55,7 +55,7 @@ const CommunityEngagement = () => {
   return (
     <OuterContainer>
       <PageContainer>
-        <Title>CommuniBridge</Title>
+        <Title>CommuniBridges</Title>
         <IconWrapper>
           <IconImage src="Connectivity_circle.png" alt="Connective Circle" />
           <IconLabel>Connective Circle</IconLabel>
