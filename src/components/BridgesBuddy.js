@@ -8,79 +8,78 @@ const OuterContainer = styled.div`
   align-items: center;
   min-height: 100vh;
   background-color: #f4f4f9;
-  font-family: 'Arial', sans-serif; // Consistent font
+  font-family: 'Arial', sans-serif;
 `;
 
 const PageContainer = styled.div`
-  width: 375px; // Match the image width
+  width: 375px; 
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  overflow: hidden; // Hide content overflow for rounded corners
-  padding: 10px; // Reduce padding to decrease overall height
+  overflow: hidden; 
+  padding: 10px; 
 `;
 
 const Title = styled.h1`
-  font-size: 28px; // Slightly smaller font size
+  font-size: 28px; 
   font-weight: bold;
   text-align: center;
-  margin-bottom: 10px; // Reduced margin
+  margin-bottom: 10px; 
   color: #333;
-  padding: 10px; // Add smaller padding to the title area
+  padding: 10px;
 `;
 
 const ImageWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 10px; // Reduce spacing below the image
+  margin-bottom: 10px;
 `;
 
 const BuddyImage = styled.img`
-  width: 180px; // Slightly smaller width for the main buddy image
+  width: 180px;
   height: auto;
 `;
 
 const ToggleWrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 15px; // Reduced margin between toggle and text area
+  margin-bottom: 15px;
 `;
 
 const ToggleButton = styled.button`
-  background-color: ${(props) => (props.active ? (props.mode === 'translational' ? '#000' : '#d9534f') : '#ccc')}; // Use Bootstrap-like red
+  background-color: ${(props) => (props.active ? (props.mode === 'translational' ? '#000' : '#d9534f') : '#ccc')}; 
   color: white;
   border: none;
   border-radius: 20px;
-  padding: 8px 15px; // Slightly smaller padding
+  padding: 8px 15px; 
   cursor: pointer;
-  margin: 0 5px; // Reduced margin between buttons
+  margin: 0 5px; 
   font-weight: bold;
   transition: background-color 0.3s ease;
-  font-size: 14px; // Reduced font size for a better fit
+  font-size: 14px;
 
   &:hover {
-    background-color: ${(props) => (props.mode === 'translational' ? '#333' : '#c9302c')}; // Darker red on hover
+    background-color: ${(props) => (props.mode === 'translational' ? '#333' : '#c9302c')}; 
   }
 `;
 
 const ContentWrapper = styled.div`
-  padding: 10px; // Reduced padding for a compact layout
-  text-align: center; // Center text content
+  padding: 10px; 
+  text-align: center;
 `;
 
-// Rectangle Container for each suggestion prompt
 const QuoteRectangle = styled.div`
-  background-color: ${(props) => props.bgColor || '#e8f4ff'}; // Different background colors for rectangles
-  border-radius: 20px; // Slightly less rounded corners for rectangles
-  padding: 10px 15px; // Reduced padding inside each rectangle
-  margin: 5px 0; // Smaller space between rectangles
-  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1); // Subtle shadow for the rectangle
+  background-color: ${(props) => props.bgColor || '#e8f4ff'}; 
+  border-radius: 20px;
+  padding: 10px 15px; 
+  margin: 5px 0; 
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 `;
 
 const QuoteText = styled.p`
-  font-size: 14px; // Reduced font size to fit more content
+  font-size: 14px; 
   font-weight: bold;
-  margin: 0; // Remove default margin for the text
+  margin: 0;
   color: #333;
 `;
 
@@ -113,23 +112,32 @@ const BridgesBuddy = () => {
           </ToggleButton>
         </ToggleWrapper>
 
-        {/* Content Area with Reduced Vertical Spacing */}
+        {/* Conditional rendering based on the selected mode */}
         <ContentWrapper>
-          <QuoteRectangle bgColor="#ffe6e6"> {/* Light red background */}
-            <QuoteText>Feeling something? Let's talk about it.</QuoteText>
-          </QuoteRectangle>
-          <QuoteRectangle bgColor="#ffecd1"> {/* Light orange background */}
-            <QuoteText>Custom lessons just for you—let's get started!</QuoteText>
-          </QuoteRectangle>
-          <QuoteRectangle bgColor="#e7f3e7"> {/* Light green background */}
-            <QuoteText>Need a wellness check-in? I'm here for you.</QuoteText>
-          </QuoteRectangle>
-          <QuoteRectangle bgColor="#e8f4ff"> {/* Light blue background */}
-            <QuoteText>Stuck on a phrase? I'm your instant translator!</QuoteText>
-          </QuoteRectangle>
-          <QuoteRectangle bgColor="#f0e6ff"> {/* Light purple background */}
-            <QuoteText>Ready to chat? Let's sharpen those language skills!</QuoteText>
-          </QuoteRectangle>
+          {mode === 'translational' && (
+            <>
+              <QuoteRectangle bgColor="#e8f4ff"> {/* Light blue background */}
+                <QuoteText>Stuck on a phrase? I'm your instant translator!</QuoteText>
+              </QuoteRectangle>
+              <QuoteRectangle bgColor="#f0e6ff"> {/* Light purple background */}
+                <QuoteText>Ready to chat? Let's sharpen those language skills!</QuoteText>
+              </QuoteRectangle>
+            </>
+          )}
+
+          {mode === 'conversational' && (
+            <>
+              <QuoteRectangle bgColor="#ffe6e6"> {/* Light red background */}
+                <QuoteText>Feeling something? Let's talk about it.</QuoteText>
+              </QuoteRectangle>
+              <QuoteRectangle bgColor="#ffecd1"> {/* Light orange background */}
+                <QuoteText>Custom lessons just for you—let's get started!</QuoteText>
+              </QuoteRectangle>
+              <QuoteRectangle bgColor="#e7f3e7"> {/* Light green background */}
+                <QuoteText>Need a wellness check-in? I'm here for you.</QuoteText>
+              </QuoteRectangle>
+            </>
+          )}
         </ContentWrapper>
 
         <ImageWrapper>
