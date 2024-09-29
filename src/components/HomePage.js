@@ -1,24 +1,41 @@
 import React from 'react';
-import styled from 'styled-components';
-import Tile from './Tile';
-import { useNavigate } from 'react-router-dom';
-
-const HomeWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  padding: 1rem;
-`;
+import './HomePage.css'; // Custom styles for homepage
 
 const HomePage = () => {
-  const navigate = useNavigate();
-
   return (
-    <HomeWrapper>
-      <Tile title="AI Avatar - 'Bridges Buddy'" onClick={() => navigate('/bridges-buddy')} />
-      <Tile title="AI-Powered Translation and Adaptability" onClick={() => navigate('/translation-adaptability')} />
-      <Tile title="Centralized Community Engagement" onClick={() => navigate('/community-engagement')} />
-    </HomeWrapper>
+    <div className="homepage">
+      
+      
+      <div className="main-section">
+        <div className="left-feature">
+          <img src="cultural_competence.png" alt="Cultural Competence" className="feature-image"/>
+          <h2 className="feature-title">Cultural Competence</h2>
+        </div>
+        <div className="right-feature">
+          <img src="stigma_free.png" alt="Stigma-Free Education" className="feature-image"/>
+          <h2 className="feature-title">Stigma-Free Education</h2>
+        </div>
+      </div>
+      <header className="homepage-header">
+        <h1 className="main-title">BridgesPortal</h1>
+        <h3 className="sub-title">Navigate, Connect, Thrive</h3>
+        <p className="tagline">Embrace Your New World with Confidence and Wellness!</p>
+      </header>
+      <div className="services-section">
+        <div className="service">
+          <img src="hipic.png" alt="BridgesBuddy" className="service-image"/>
+          <h3 className="service-title">BridgesBuddy</h3>
+        </div>
+        <div className="service">
+          <img src="bridge_talk_home.png" alt="BridgeTalk" className="service-image"/>
+          <h3 className="service-title">BridgeTalk</h3>
+        </div>
+        <div className="service">
+          <img src="communi_bridge_2.png" alt="CommuniBridge" className="service-image"/>
+          <h3 className="service-title">CommuniBridge</h3>
+        </div>
+      </div>
+    </div>
   );
 };
 
